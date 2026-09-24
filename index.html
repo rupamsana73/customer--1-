@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tanmay Sau — B.Pharm Student & Artist Portfolio</title>
+<meta name="description" content="Tanmay Sau — B.Pharm Student & Artist Portfolio, education, painting diploma, contact details, and personal information." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --background:#ffffff; --foreground:#111111;
+  --ink:#0a0a0a;
+  --muted:#8d8d8d; --subtle:#b6b6b6;
+  --line:#e6e5e2;
+  --surface:#f1f0ee; --surface-2:#e3e2df;
+  --accent:#b15f2c; --accent-from:#cf8047; --accent-to:#97501f;
+  --hero-to:#c9c9c9;
+  --radius-pill:9999px; --radius-card:2rem; --radius-card-sm:1.25rem; --radius-control:0.875rem;
+  --text-watermark:13rem;
+  --container-shell:88rem;
+}
+*{ box-sizing:border-box; margin:0; padding:0 }
+html{ font-size:16px; -webkit-font-smoothing:antialiased; scroll-behavior:auto }
+body{ background:var(--background); color:var(--foreground); font-family:'Onest',sans-serif; overflow-x:hidden }
+a{ color:inherit; text-decoration:none }
+button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer }
+ul{ list-style:none }
+img{ display:block }
+.sr-only{ position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0 }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
+@media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important } }
+
+@media (max-width:1920px){ html{ font-size:0.833333vw } }
+@media (max-width:1440px){ html{ font-size:1.111111vw } }
+@media (max-width:1024px){ html{ font-size:1.5625vw } }
+@media (max-width:640px){  html{ font-size:4.444444vw } }
+
+.shell{ max-width:var(--container-shell); margin-inline:auto; padding-inline:1.25rem }
+@media (min-width:640px){ .shell{ padding-inline:2rem } }
+
+/* skip link */
+.skip-link{ position:absolute; left:-999px; top:-999px; z-index:60 }
+.skip-link:focus{ position:fixed; left:1rem; top:1rem; border-radius:.875rem; background:var(--ink); padding:.5rem 1rem; font-size:.875rem; color:#fff }
+
+/* icons */
+.icon{ width:1em; height:1em; display:inline-block; flex-shrink:0 }
+
+/* ---------- Loader ---------- */
+#loader{ position:fixed; inset:0; z-index:120; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; background:var(--ink); color:#fff; border-radius:0 0 2rem 2rem; transition:transform .7s cubic-bezier(.22,1,.36,1); }
+#loader.exit{ transform:translateY(-100%) }
+#loader .center{ display:flex; flex-direction:column; align-items:center; gap:1.25rem; text-align:center; transition:opacity .5s ease, transform .5s ease; }
+#loader.exit .center{ opacity:0; transform:translateY(-12px) }
+#loader .brand-row{ display:flex; align-items:center; gap:.5rem; font-weight:600; font-size:1.5rem }
+@media (min-width:640px){ #loader .brand-row{ font-size:1.875rem } }
+#loader .brand-row .icon{ font-size:1.875rem; color:var(--accent-from) }
+#loader p{ max-width:24ch; font-size:.875rem; color:rgba(255,255,255,.55) }
+#loader .progress{ width:min(22rem,72vw); display:flex; flex-direction:column; gap:.75rem }
+#loader .track{ height:1px; background:rgba(255,255,255,.15) }
+#loader .fill{ height:100%; background:var(--accent-from); width:0%; transition:width .1s ease-out }
+#loader .meta{ display:flex; justify-content:space-between; font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.45) }
+#loader .count{ color:rgba(255,255,255,.8); font-variant-numeric:tabular-nums }
+
+/* ---------- reveal utilities ---------- */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+.line-wrap{ overflow:hidden; display:block }
+.line-inner{ display:block; transform:translateY(100%); opacity:0; transition:transform .9s cubic-bezier(.215,.61,.355,1), opacity .9s cubic-bezier(.215,.61,.355,1); }
+.line-inner.in{ transform:translateY(0); opacity:1 }
+.word{ display:inline-block; transform:translateY(24px); opacity:0; transition:transform .7s cubic-bezier(.165,.84,.44,1), opacity .7s cubic-bezier(.165,.84,.44,1); }
+.word.in{ transform:translateY(0); opacity:1 }
+
+/* ---------- Header ---------- */
+header#site-header{ position:absolute; inset-inline:0; top:0; z-index:50; opacity:0; transform:translateY(-14px); transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+header#site-header.in{ opacity:1; transform:translateY(0) }
+.header-row{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:1.25rem 0 }
+@media (min-width:640px){ .header-row{ padding:1.5rem 0 } }
+.brand-btn{ display:flex; align-items:center; gap:.5rem; font-size:1.125rem; font-weight:600; letter-spacing:-.01em; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.brand-btn:hover{ transform:scale(1.04) }
+.brand-btn .icon{ font-size:1.25rem; color:var(--accent) }
+nav.primary-nav{ display:none; }
+@media (min-width:1024px){ nav.primary-nav{ display:flex } }
+nav.primary-nav ul{ display:flex; gap:2rem; font-size:.875rem; font-weight:500 }
+nav.primary-nav li button{ display:flex; align-items:center; gap:.25rem; transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s; opacity:.8 }
+nav.primary-nav li button:hover{ transform:translateY(-2px); opacity:1 }
+nav.primary-nav li button[aria-current="page"]{ opacity:1 }
+.caret{ font-size:.75rem; opacity:.6 }
+.header-right{ display:flex; align-items:center; gap:.75rem }
+.clock-chip{ display:none; align-items:center; gap:.75rem; border:1px solid rgba(230,229,226,.8); background:rgba(255,255,255,.4); backdrop-filter:blur(4px); border-radius:.875rem; padding:.5rem .75rem; font-size:.75rem; color:rgba(17,17,17,.7) }
+@media (min-width:768px){ .clock-chip{ display:flex } }
+.clock-chip .label{ color:rgba(17,17,17,.45) }
+.clock-chip .time{ min-width:3.5rem; font-variant-numeric:tabular-nums; font-weight:500; color:#111 }
+.clock-chip .dot{ color:rgba(17,17,17,.3) }
+.menu-btn{ border:1px solid rgba(230,229,226,.8); background:rgba(255,255,255,.4); backdrop-filter:blur(4px); border-radius:.875rem; transition:background .3s }
+.menu-btn:hover{ background:rgba(255,255,255,.7) }
+.menu-btn span.inner{ display:flex; align-items:center; gap:.5rem; padding:.5rem 1rem; font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.menu-btn:hover span.inner{ transform:scale(1.05) }
+.menu-btn .menu-word{ display:none }
+@media (min-width:640px){ .menu-btn .menu-word{ display:inline } }
+
+/* ---------- Hero ---------- */
+section#home{ position:relative; isolation:isolate; overflow:hidden; border-radius:0 0 2rem 2rem; background:var(--hero-to) }
+#liquid-wrap{ position:absolute; inset:0; z-index:0 }
+#liquid-wrap img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+#liquid-canvas{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none }
+.vignette{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,.35), transparent, rgba(255,255,255,.35)) }
+.watermark{ pointer-events:none; position:absolute; inset-inline:0; bottom:7rem; z-index:1; text-align:center; user-select:none; font-weight:700; line-height:1; font-size:var(--text-watermark); color:rgba(255,255,255,.4); opacity:0; transform:translateY(20px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1) }
+.watermark.in{ opacity:.4; transform:translateY(0) }
+.hero-grid{ position:relative; z-index:20; display:flex; flex-direction:column; gap:2rem; padding:7rem 1.25rem 5rem }
+@media (min-width:640px){ .hero-grid{ padding-inline:2rem } }
+@media (min-width:1024px){ .hero-grid{ display:grid; min-height:100lvh; grid-template-columns:repeat(12,1fr); gap:2.5rem; padding:9rem 2rem 7rem } }
+.hero-left{ display:flex; flex-direction:column; gap:1.75rem }
+@media (min-width:1024px){ .hero-left{ grid-column:span 7 } }
+.eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-size:.875rem; font-weight:500 }
+.eyebrow.dark{ color:rgba(17,17,17,.7) }
+.eyebrow.light{ color:rgba(255,255,255,.7) }
+.eyebrow .dot{ width:.375rem; height:.375rem; border-radius:9999px; background:rgba(17,17,17,.5) }
+.eyebrow.light .dot{ background:rgba(255,255,255,.6) }
+h1.hero-h1{ max-width:18ch; font-size:2.25rem; font-weight:600; line-height:.98; letter-spacing:-.02em }
+@media (min-width:640px){ h1.hero-h1{ font-size:3rem } }
+@media (min-width:768px){ h1.hero-h1{ font-size:3.75rem } }
+.rating-row{ display:flex; align-items:center; gap:.75rem }
+.rating-row .badge{ display:inline-flex; align-items:center; justify-content:center; width:1.5rem; height:1.5rem; border-radius:9999px; background:var(--ink); color:#fff }
+.rating-row .txt{ font-size:.875rem; font-weight:500; color:rgba(17,17,17,.7) }
+.cta-row{ display:flex; flex-wrap:wrap; gap:.75rem }
+.pill-btn{ display:inline-block; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.pill-btn:hover{ transform:scale(1.04) }
+.pill-btn .pill-inner{ display:inline-flex; align-items:center; gap:.75rem; border-radius:9999px; font-size:.875rem; font-weight:500 }
+.pill-btn.with-arrow .pill-inner{ padding:.375rem .375rem .375rem 1.5rem }
+.pill-btn.no-arrow .pill-inner{ padding:.875rem 1.75rem }
+.pill-btn.dark .pill-inner{ background:var(--ink); color:#fff }
+.pill-btn.light .pill-inner{ background:var(--surface); color:#111 }
+.pill-btn.outline .pill-inner{ border:1px solid var(--line); background:transparent; color:#111 }
+.pill-badge{ width:2.25rem; height:2.25rem; display:grid; place-items:center; border-radius:9999px; font-size:1rem; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.pill-btn.dark .pill-badge{ background:#fff; color:var(--ink) }
+.pill-btn.light .pill-badge, .pill-btn.outline .pill-badge{ background:var(--ink); color:#fff }
+.pill-btn:hover .pill-badge.right{ transform:translate(3px,0) }
+.pill-btn:hover .pill-badge.up-right{ transform:translate(2px,-2px) }
+.hero-right{ display:flex; flex-direction:column; align-items:flex-start; gap:2rem }
+@media (min-width:1024px){ .hero-right{ grid-column:span 5; align-items:flex-end } }
+.hero-card{ width:100%; max-width:24rem; border-radius:1.25rem; background:rgba(255,255,255,.7); padding:.5rem; box-shadow:0 10px 30px -10px rgba(0,0,0,.15); outline:1px solid rgba(230,229,226,.7); backdrop-filter:blur(12px) }
+@media (min-width:1024px){ .hero-card{ width:19rem } }
+.hero-card-row{ display:flex; gap:.5rem; cursor:pointer; border-radius:.875rem }
+.hero-tile{ aspect-ratio:1; width:6rem; display:grid; place-items:center; border-radius:.875rem; background:var(--ink); font-size:1.875rem; color:#fff; flex-shrink:0 }
+.hero-tile .icon{ color:var(--accent-from) }
+.hero-panel{ flex:1; border-radius:.875rem; background:rgba(241,240,238,.7); padding:.75rem; display:flex; flex-direction:column; justify-content:space-between; min-width:0 }
+.hero-panel .slot{ position:relative; min-height:3.25rem }
+.hero-panel .caption{ font-size:.65rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; color:rgba(17,17,17,.45); transition:opacity .35s }
+.hero-panel .title{ max-width:8rem; font-size:.875rem; font-weight:500; line-height:1.35; transition:opacity .35s, transform .35s }
+.hero-panel .bottom-row{ display:flex; align-items:center; justify-content:space-between; margin-top:.5rem }
+.dashes{ display:flex; gap:.25rem }
+.dashes span{ height:.25rem; border-radius:9999px; background:rgba(17,17,17,.2); width:.375rem; transition:all .3s }
+.dashes span.active{ width:1rem; background:rgba(17,17,17,.7) }
+.carousel-nav{ display:flex; gap:.375rem }
+.carousel-nav button{ width:1.75rem; height:1.75rem; display:grid; place-items:center; border-radius:9999px; background:#fff; color:rgba(17,17,17,.7); outline:1px solid var(--line); transition:color .2s }
+.carousel-nav button:hover{ color:#111 }
+.carousel-nav button.prev .icon{ transform:rotate(180deg) }
+.partners{ width:100%; max-width:24rem }
+@media (min-width:1024px){ .partners{ width:19rem } }
+.partners .label{ margin-bottom:.75rem; font-size:.75rem; font-weight:500; color:rgba(17,17,17,.45); text-align:left }
+@media (min-width:1024px){ .partners .label{ text-align:right } }
+.partners-grid{ display:grid; grid-template-columns:repeat(4,1fr); column-gap:1rem; row-gap:.75rem }
+.partners-grid span{ display:flex; align-items:center; gap:.375rem; font-size:.75rem; color:rgba(17,17,17,.7); transition:transform .3s cubic-bezier(.2,.8,.2,1), opacity .3s }
+.partners-grid span:hover{ transform:translateY(-2px); opacity:1 }
+.partners-grid .icon{ color:rgba(17,17,17,.4) }
+.status-bar{ display:flex; align-items:center; justify-content:space-between; gap:.75rem; border-top:1px solid rgba(17,17,17,.1); padding:1.25rem 0; font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.025em; color:rgba(17,17,17,.6) }
+.status-bar .center-txt{ display:none }
+@media (min-width:640px){ .status-bar .center-txt{ display:inline } }
+.status-bar .right{ display:inline-flex; gap:.5rem }
+
+/* ---------- About ---------- */
+section#about{ background:#fff }
+.about-grid{ display:grid; grid-template-columns:1fr; align-items:center; gap:3rem; padding:5rem 0 }
+@media (min-width:1024px){ .about-grid{ grid-template-columns:1fr 1fr; padding-block:7rem } }
+.globe-block{ position:relative; min-height:14rem }
+@media (min-width:1024px){ .globe-block{ min-height:20rem } }
+.globe-block .icon.big{ position:absolute; left:-1rem; top:50%; transform:translateY(-50%); font-size:12rem; color:rgba(17,17,17,.1) }
+@media (min-width:640px){ .globe-block .icon.big{ font-size:16rem } }
+@media (min-width:1024px){ .globe-block .icon.big{ left:-1.5rem; font-size:20rem } }
+.globe-caption{ position:absolute; bottom:0; left:0; display:flex; align-items:center; gap:.75rem; font-size:.875rem; color:rgba(17,17,17,.7) }
+.globe-caption .icon{ font-size:1.5rem; color:#111 }
+.globe-caption span{ max-width:14rem }
+.about-right{ display:flex; flex-direction:column; gap:2.5rem }
+.about-h2{ font-size:1.5rem; font-weight:500; line-height:1.35; letter-spacing:-.01em }
+@media (min-width:640px){ .about-h2{ font-size:1.875rem } }
+.about-h2 .muted{ color:var(--muted) }
+.about-footer-row{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1.5rem; border-top:1px solid var(--line); padding-top:1.5rem }
+.social-label{ font-size:.875rem; color:rgba(17,17,17,.45) }
+.social-chips{ display:flex; gap:.5rem; margin-top:.5rem }
+.social-chip{ width:2.25rem; height:2.25rem; display:grid; place-items:center; border-radius:9999px; font-size:.875rem }
+.social-chip.accent{ background:var(--accent); color:#fff }
+.social-chip.neutral{ background:var(--surface); color:rgba(17,17,17,.7) }
+.social-chip .icon{ transition:transform .3s cubic-bezier(.2,.8,.2,1) }
+.social-chip:hover .icon{ transform:scale(1.18) }
+
+/* ---------- CreateBand ---------- */
+.create-band{ background:#fff }
+.create-list{ display:flex; flex-direction:column; gap:.75rem; padding:2.5rem 0 }
+@media (min-width:640px){ .create-list{ flex-direction:row; gap:1rem } }
+.create-tile{ flex:1; display:grid; place-items:center; height:6rem; border-radius:9999px; font-size:1.875rem; font-weight:500; transition:transform .3s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ .create-tile{ height:10rem; font-size:2.25rem } }
+.create-tile:hover{ transform:scale(1.03) }
+.create-tile.light{ background:var(--surface); color:#111 }
+.create-tile.accent{ background:linear-gradient(to bottom right,var(--accent-from),var(--accent-to)); color:#fff }
+.create-tile.dark{ background:var(--ink); color:#fff; font-size:2.25rem }
+@media (min-width:640px){ .create-tile.dark{ font-size:3rem } }
+.create-tile.ghost{ background:rgba(241,240,238,.6); color:rgba(17,17,17,.35) }
+
+/* ---------- Portfolio ---------- */
+section#works{ background:#fff; padding-bottom:5rem }
+@media (min-width:1024px){ section#works{ padding-bottom:7rem } }
+.section-eyebrow-wrap{ display:flex; justify-content:center; padding-top:2.5rem }
+.eyebrow.bordered{ border:1px solid var(--line); border-radius:9999px; padding:.375rem 1rem }
+.section-h2{ text-align:center; font-size:2.25rem; font-weight:600; letter-spacing:-.02em; margin:1rem auto 0; width:fit-content }
+@media (min-width:640px){ .section-h2{ font-size:3rem } }
+.cards-grid{ display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:3rem }
+@media (min-width:768px){ .cards-grid{ grid-template-columns:1fr 1fr } }
+.p-card{ position:relative; min-height:22rem; overflow:hidden; border-radius:2rem; background:var(--ink); padding:1.5rem; color:#fff; outline:1px solid rgba(255,255,255,.05); transition:transform .4s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ .p-card{ min-height:26rem; padding:2rem } }
+.p-card:hover{ transform:translateY(-8px) scale(1.012) }
+.p-card-top{ display:flex; justify-content:space-between; font-size:.75rem; text-transform:uppercase; letter-spacing:.025em; color:rgba(255,255,255,.45) }
+.p-card-badge{ width:2.75rem; height:2.75rem; display:grid; place-items:center; border-radius:9999px; background:rgba(255,255,255,.1); color:#fff; outline:1px solid rgba(255,255,255,.15); transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.p-card:hover .p-card-badge{ transform:rotate(45deg) scale(1.08) }
+.p-card-mark{ position:absolute; inset:0; display:grid; place-items:center; pointer-events:none }
+.p-card-mark .icon{ font-size:4.5rem; color:rgba(255,255,255,.9) }
+.p-card-bottom{ position:absolute; inset-inline:1.5rem; bottom:1.5rem }
+@media (min-width:640px){ .p-card-bottom{ inset-inline:2rem; bottom:2rem } }
+.p-card-bottom h3{ font-size:1.5rem; font-weight:500; letter-spacing:-.01em }
+@media (min-width:640px){ .p-card-bottom h3{ font-size:1.875rem } }
+.p-card-bottom p{ margin-top:.5rem; max-width:28rem; font-size:.875rem; color:rgba(255,255,255,.55) }
+.tag-row{ margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:.5rem }
+.tag-chip{ display:inline-flex; border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:9999px; padding:.5rem 1rem; font-size:.875rem }
+
+/* ---------- Services ---------- */
+section#services{ background:#fff; padding:5rem 0 }
+@media (min-width:1024px){ section#services{ padding-block:7rem } }
+.services-h2{ margin:1.25rem 0 3rem; max-width:16ch; font-size:2.25rem; font-weight:600; letter-spacing:-.02em }
+@media (min-width:640px){ .services-h2{ margin-bottom:3.5rem; font-size:3rem } }
+.service-row-li{ border-top:1px solid var(--line) }
+.service-row-li:first-child{ border-top:none }
+.service-row{ display:flex; align-items:center; gap:1rem; border-radius:1.25rem; padding-block:1.5rem; padding-inline:0; transition:background .4s cubic-bezier(.2,.8,.2,1), padding .4s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ .service-row{ gap:1.5rem; padding-block:2rem } }
+.service-row:hover{ background:rgba(241,240,238,1); padding-inline:1.5rem }
+@media (min-width:640px){ .service-row:hover{ padding-left:2rem; padding-right:1.25rem } }
+.service-index{ width:1.75rem; font-size:.875rem; font-weight:500; color:rgba(17,17,17,.4) }
+@media (min-width:640px){ .service-index{ width:2.5rem } }
+.service-title{ flex:1; font-size:1.5rem; font-weight:500; letter-spacing:-.01em }
+@media (min-width:640px){ .service-title{ font-size:1.875rem } }
+@media (min-width:768px){ .service-title{ font-size:2.25rem } }
+.service-desc{ display:none; max-width:20rem; font-size:.875rem; color:rgba(17,17,17,.55) }
+@media (min-width:1024px){ .service-desc{ display:block } }
+.service-badge{ width:2.5rem; height:2.5rem; display:grid; place-items:center; border-radius:9999px; background:var(--ink); color:#fff; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ .service-badge{ width:3rem; height:3rem } }
+.service-row:hover .service-badge{ transform:translateX(5px) }
+
+/* ---------- Stats ---------- */
+section#stats-wrap{ background:#fff; padding-bottom:5rem }
+@media (min-width:1024px){ section#stats-wrap{ padding-bottom:7rem } }
+.stats-panel{ border-radius:2rem; background:var(--ink); padding:3rem 1.5rem; color:#fff; margin-top:2.5rem }
+@media (min-width:640px){ .stats-panel{ padding:4rem 2rem } }
+@media (min-width:768px){ .stats-panel{ padding-inline:4rem } }
+.stats-h2{ margin-top:1rem; max-width:20ch; font-size:1.875rem; font-weight:500; letter-spacing:-.01em }
+@media (min-width:768px){ .stats-h2{ font-size:2.25rem } }
+.stats-grid{ margin-top:3.5rem; display:grid; grid-template-columns:repeat(2,1fr); column-gap:2rem; row-gap:3rem }
+@media (min-width:1024px){ .stats-grid{ grid-template-columns:repeat(4,1fr) } }
+.stat-num{ font-size:3rem; font-weight:600; letter-spacing:-.02em }
+@media (min-width:640px){ .stat-num{ font-size:3.75rem } }
+@media (min-width:768px){ .stat-num{ font-size:4.5rem } }
+.stat-label{ margin-top:.75rem; font-size:.875rem; color:rgba(255,255,255,.55) }
+
+/* ---------- Footer ---------- */
+footer{ position:relative; overflow:hidden; border-radius:2rem 2rem 0 0; background:var(--ink); color:#fff }
+.footer-inner{ position:relative; z-index:10; padding:5rem 0 2.5rem }
+@media (min-width:1024px){ .footer-inner{ padding-top:6rem } }
+.footer-cta{ display:flex; flex-direction:column; gap:2rem; border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:4rem }
+@media (min-width:1024px){ .footer-cta{ flex-direction:row; align-items:flex-end; justify-content:space-between } }
+.footer-h2{ max-width:16ch; font-size:2.25rem; font-weight:600; letter-spacing:-.02em }
+@media (min-width:640px){ .footer-h2{ font-size:3rem } }
+@media (min-width:768px){ .footer-h2{ font-size:3.75rem } }
+.footer-cols{ display:grid; grid-template-columns:1fr; gap:3rem; padding-block:4rem }
+@media (min-width:768px){ .footer-cols{ grid-template-columns:1fr 1fr } }
+@media (min-width:1024px){ .footer-cols{ grid-template-columns:repeat(4,1fr) } }
+.footer-brand-row{ display:flex; align-items:center; gap:.5rem; font-size:1.125rem; font-weight:600 }
+.footer-brand-row .icon{ color:var(--accent-from); font-size:1.25rem }
+.footer-tagline{ margin-top:1rem; max-width:20rem; font-size:.875rem; color:rgba(255,255,255,.55) }
+.footer-col-title{ font-size:.75rem; text-transform:uppercase; letter-spacing:.025em; color:rgba(255,255,255,.4) }
+.footer-links{ margin-top:1rem; display:flex; flex-direction:column; gap:.75rem }
+.animated-link{ display:inline-flex }
+.animated-link span{ display:inline-block; font-size:.875rem; color:rgba(255,255,255,.65); transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s, color .35s }
+.animated-link:hover span{ transform:translateX(4px); opacity:1; color:#fff }
+.legal-bar{ display:flex; flex-direction:column; align-items:center; justify-content:space-between; gap:1rem; border-top:1px solid rgba(255,255,255,.1); padding-top:2rem; font-size:.75rem; color:rgba(255,255,255,.45) }
+@media (min-width:640px){ .legal-bar{ flex-direction:row } }
+.legal-bar .right{ display:flex; gap:1.5rem }
+.footer-watermark{ position:absolute; inset-inline:0; bottom:-1.5rem; z-index:0; text-align:center; pointer-events:none; user-select:none; font-weight:700; line-height:1; font-size:var(--text-watermark); color:rgba(255,255,255,.05) }
+
+/* ---------- Social links ---------- */
+.social-chips{ flex-wrap:wrap }
+.social-chip svg{ width:1rem; height:1rem; fill:currentColor; stroke:currentColor; }
+.social-chip.instagram{ background:#111; color:#fff }
+.social-chip.threads{ background:var(--surface); color:#111 }
+.social-chip.facebook{ background:#1877f2; color:#fff }
+.social-chip.linkedin{ background:#0a66c2; color:#fff }
+.social-chip.email{ background:var(--accent); color:#fff }
+
+/* ---------- Certificates ---------- */
+#certifications{ background:#fff; padding:5rem 0 }
+@media (min-width:1024px){ #certifications{ padding-block:7rem } }
+.cert-grid{ display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:3rem }
+@media (min-width:768px){ .cert-grid{ grid-template-columns:1fr 1fr } }
+.cert-card{ position:relative; min-height:18rem; overflow:hidden; border-radius:2rem; background:var(--surface); padding:1.5rem; outline:1px solid var(--line); transition:transform .4s cubic-bezier(.2,.8,.2,1), background .4s }
+@media (min-width:640px){ .cert-card{ min-height:20rem; padding:2rem } }
+.cert-card:hover{ transform:translateY(-8px); background:#fff }
+.cert-card .cert-no{ display:inline-grid; place-items:center; width:2.75rem; height:2.75rem; border-radius:9999px; background:var(--ink); color:#fff; font-size:.75rem; font-weight:600 }
+.cert-card h3{ margin-top:2rem; max-width:18ch; font-size:1.5rem; font-weight:500; line-height:1.15 }
+@media (min-width:640px){ .cert-card h3{ font-size:1.875rem } }
+.cert-card p{ margin-top:.75rem; max-width:34rem; font-size:.875rem; color:rgba(17,17,17,.55); line-height:1.6 }
+.cert-meta{ margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:.5rem }
+.cert-meta span{ display:inline-flex; border:1px solid var(--line); border-radius:9999px; padding:.45rem .8rem; font-size:.75rem; color:rgba(17,17,17,.7) }
+
+/* ---------- NavMenu ---------- */
+#nav-menu{ position:fixed; inset:0; z-index:115; display:flex; flex-direction:column; background:var(--ink); color:#fff; opacity:0; pointer-events:none; transition:opacity .55s cubic-bezier(.2,.8,.2,1) }
+#nav-menu.open{ opacity:1; pointer-events:auto }
+.nav-topbar{ display:flex; align-items:center; justify-content:space-between; padding:1.25rem 0 }
+@media (min-width:640px){ .nav-topbar{ padding:1.5rem 0 } }
+.nav-topbar .brand-row{ display:flex; align-items:center; gap:.5rem; font-size:1.125rem; font-weight:600 }
+.nav-topbar .brand-row .icon{ color:var(--accent-from); font-size:1.25rem }
+.close-btn{ display:inline-flex; align-items:center; gap:.5rem; border:1px solid rgba(255,255,255,.15); border-radius:.875rem; padding:.5rem 1rem; font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.7); transition:border-color .2s, color .2s }
+.close-btn:hover{ border-color:rgba(255,255,255,.4); color:#fff }
+.nav-menu-items{ flex:1; display:flex; flex-direction:column; justify-content:center }
+.nav-menu-items ul{ display:flex; flex-direction:column; gap:.25rem }
+.nav-menu-items li button{ display:flex; align-items:center; gap:1rem; padding-block:.5rem; text-align:left; font-size:2.25rem; font-weight:600; letter-spacing:-.02em; width:100%; transition:transform .5s ease-out, opacity .5s ease-out; transform:translateY(1rem); opacity:0 }
+@media (min-width:640px){ .nav-menu-items li button{ font-size:3.75rem } }
+#nav-menu.open .nav-menu-items li button{ transform:translateY(0); opacity:1 }
+.nav-menu-items .idx{ font-size:1rem; font-weight:400; color:rgba(255,255,255,.3); transition:color .3s }
+.nav-menu-items li button:hover .idx{ color:var(--accent-from) }
+.nav-menu-items .label{ color:rgba(255,255,255,.7); transition:color .3s }
+.nav-menu-items li button:hover .label{ color:#fff }
+.nav-bottombar{ display:flex; flex-direction:column; gap:.75rem; border-top:1px solid rgba(255,255,255,.1); padding:1.5rem 0; font-size:.75rem; text-transform:uppercase; letter-spacing:.025em; color:rgba(255,255,255,.45) }
+@media (min-width:640px){ .nav-bottombar{ flex-direction:row; justify-content:space-between } }
+.nav-bottombar button{ color:rgba(255,255,255,.7); transition:color .2s }
+.nav-bottombar button:hover{ color:#fff; text-decoration:underline }
+
+/* ---------- Request/Contact Modal ---------- */
+#modal-backdrop{ position:fixed; inset:0; z-index:110; display:flex; align-items:flex-end; justify-content:center; padding:1rem; background:rgba(17,17,17,.3); backdrop-filter:blur(16px); opacity:0; pointer-events:none; transition:opacity .5s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ #modal-backdrop{ align-items:center } }
+#modal-backdrop.open{ opacity:1; pointer-events:auto }
+.modal-panel{ position:relative; width:100%; max-width:32rem; overflow:hidden; border-radius:2rem; background:#fff; padding:1.5rem; box-shadow:0 25px 60px -15px rgba(0,0,0,.3); outline:1px solid var(--line); transform:translateY(28px); transition:transform .55s cubic-bezier(.2,.8,.2,1) }
+@media (min-width:640px){ .modal-panel{ padding:2rem } }
+#modal-backdrop.open .modal-panel{ transform:translateY(0) }
+.modal-close{ position:absolute; right:1rem; top:1rem; width:2.25rem; height:2.25rem; display:grid; place-items:center; border-radius:9999px; background:var(--surface); color:rgba(17,17,17,.6); transition:background .2s, color .2s }
+.modal-close:hover{ background:var(--surface-2); color:#111 }
+.modal-heading{ margin-bottom:1.5rem; display:flex; flex-direction:column; gap:.375rem }
+.modal-heading .tag{ display:inline-flex; gap:.5rem; align-items:center; font-size:.875rem; font-weight:500; color:rgba(17,17,17,.6) }
+.modal-heading .tag .dot{ width:.375rem; height:.375rem; border-radius:9999px; background:var(--accent) }
+.modal-heading h2{ font-size:1.5rem; font-weight:600; letter-spacing:-.01em }
+@media (min-width:640px){ .modal-heading h2{ font-size:1.875rem } }
+#contact-form{ display:flex; flex-direction:column; gap:1rem }
+#contact-form label{ display:flex; flex-direction:column; gap:.375rem }
+#contact-form .cap{ font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.025em; color:rgba(17,17,17,.5) }
+#contact-form input, #contact-form textarea{ width:100%; border:1px solid var(--line); background:rgba(241,240,238,.5); border-radius:.875rem; padding:.75rem 1rem; font-size:.875rem; outline:none; font-family:inherit; transition:border-color .2s, background .2s }
+#contact-form input:focus, #contact-form textarea:focus{ border-color:rgba(17,17,17,.3); background:#fff }
+#contact-form textarea{ resize:none }
+.modal-bottom-row{ margin-top:.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem }
+.modal-bottom-row .note{ font-size:.75rem; color:rgba(17,17,17,.45) }
+.success-state{ display:flex; flex-direction:column; align-items:center; text-align:center; padding-block:2rem; gap:1rem }
+.success-badge{ width:3.5rem; height:3.5rem; display:grid; place-items:center; border-radius:9999px; background:var(--ink); color:var(--accent-from); font-size:1.5rem }
+.success-state h2{ font-size:1.5rem; font-weight:600 }
+.success-state p{ max-width:32ch; font-size:.875rem; color:rgba(17,17,17,.6) }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="center">
+    <div class="brand-row"><svg class="icon" viewBox="0 0 48 48" fill="currentColor"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg> Tanmay Sau</div>
+    <p>B.Pharm student. Healthcare knowledge with creativity.</p>
+  </div>
+  <div class="progress">
+    <div class="track"><div class="fill" id="loader-fill"></div></div>
+    <div class="meta"><span>Loading</span><span class="count" id="loader-count">000</span></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="site-header">
+  <div class="shell header-row">
+    <button class="brand-btn" data-scroll="home"><svg class="icon" viewBox="0 0 48 48" fill="currentColor" style="color:#b15f2c"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg> Tanmay Sau</button>
+    <nav class="primary-nav">
+      <ul>
+        <li><button aria-current="page" data-scroll="home">Home</button></li>
+        <li><button data-scroll="works">Education</button></li>
+        <li><button data-scroll="services">Skills <span class="caret">▾</span></button></li>
+        <li><button data-scroll="certifications">Certificates</button></li>
+        <li><button data-scroll="about">About</button></li>
+        <li><button data-open-modal="1">Contact</button></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <div class="clock-chip">
+        <span class="label">Local time</span>
+        <span class="time" id="clock-time">9:41am</span>
+        <span class="dot">•</span>
+        <span class="date" id="clock-date">12 March, 2025</span>
+      </div>
+      <button class="menu-btn" id="open-nav-btn">
+        <span class="inner"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg> <span class="menu-word">Menu</span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section id="home">
+    <div id="liquid-wrap">
+      <img id="hero-base-img" alt="" />
+      <canvas id="liquid-canvas" aria-hidden="true"></canvas>
+    </div>
+    <div class="vignette"></div>
+    <div class="watermark" id="watermark">TANMAY</div>
+
+    <div class="shell hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow dark reveal" data-delay="200"><span class="dot"></span> B.Pharm 4th Year · Fresher · Artist</div>
+        <h1 class="hero-h1">
+          <span class="line-wrap"><span class="line-inner" data-line>Welcome to</span></span>
+          <span class="line-wrap"><span class="line-inner" data-line>Tanmay Sau's</span></span>
+          <span class="line-wrap"><span class="line-inner" data-line>professional profile</span></span>
+        </h1>
+        <div class="rating-row reveal" data-delay="650">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:.875rem;height:.875rem"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="txt">B.Pharm 4th Year · Fresher · Pharmacovigilance · Artist</span>
+        </div>
+        <div class="cta-row reveal" data-delay="750">
+          <button class="pill-btn dark with-arrow" data-open-modal="1">
+            <span class="pill-inner">Get in touch <span class="pill-badge right"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </button>
+          <button class="pill-btn outline no-arrow" data-scroll="works">
+            <span class="pill-inner">View Education</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card reveal" data-delay="400">
+          <div class="hero-card-row" id="hero-carousel">
+            <div class="hero-tile"><svg class="icon" viewBox="0 0 48 48" fill="currentColor"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg></div>
+            <div class="hero-panel">
+              <div class="slot">
+                <div class="caption" id="carousel-caption">Education</div>
+                <div class="title" id="carousel-title">B.Pharm · 4th Year</div>
+              </div>
+              <div class="bottom-row">
+                <div class="dashes" id="carousel-dots">
+                  <span class="active"></span><span></span><span></span>
+                </div>
+                <div class="carousel-nav">
+                  <button class="prev" id="carousel-prev"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  <button class="next" id="carousel-next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partners reveal" data-delay="550">
+          <div class="label">Profile highlights</div>
+          <div class="partners-grid">
+            <span>✦ B.Pharm</span>
+            <span>✦ Pharmacovigilance</span>
+            <span>✦ Clinical Data</span>
+            <span>✦ Painting</span>
+            <span>✦ Fresher</span>
+            <span>✦ Artist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shell status-bar reveal" data-delay="900">
+      <span>B.Pharm · 4th Year</span>
+      <span class="center-txt">Purba Medinipur, West Bengal</span>
+      <span class="right">Scroll to explore ↓</span>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="shell about-grid">
+      <div class="globe-block">
+        <svg class="icon big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9.25"/><path d="M12 2.75c2.6 2.3 4 5.8 4 9.25s-1.4 6.95-4 9.25c-2.6-2.3-4-5.8-4-9.25s1.4-6.95 4-9.25zM2.75 12h18.5"/></svg>
+        <div class="eyebrow dark" style="position:relative">About Tanmay</div>
+        <div class="globe-caption reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9.25"/><path d="M12 2.75c2.6 2.3 4 5.8 4 9.25s-1.4 6.95-4 9.25c-2.6-2.3-4-5.8-4-9.25s1.4-6.95 4-9.25zM2.75 12h18.5"/></svg>
+          <span>B.Pharm 4th-year student with interests in pharmacovigilance, clinical data, drug safety, and painting.</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <h2 class="about-h2"><span data-words>B. Pharm 4th-year student with strong knowledge of pharmacovigilance, clinical data management, and prescription analysis. Trained in phytochemistry, molecular docking, and drug safety practices. Certified in Signal Detection and Management in Pharmacovigilance, AI in Drug Discovery, and Molecular Docking. </span><span class="muted" data-words>Skilled in drug databases, research paper analysis, MS Excel, and medical terminology. Seeking an entry-level Clinical Pharmacist or Pharmacovigilance role to contribute to patient safety and regulatory compliance.</span></h2>
+        <div class="about-footer-row reveal" data-delay="200">
+          <div>
+            <div class="social-label">Connect</div>
+            <div class="social-chips">
+              <a class="social-chip email" href="mailto:sautanmoy425@gmail.com" aria-label="Email">✉</a>
+              <a class="social-chip neutral" href="tel:6291670360" aria-label="Phone">☎</a>
+              <a class="social-chip instagram" href="https://www.instagram.com/tanmaysau_arts?utm_source=qr&amp;stkn=eThkdmdsemk5ZzQ3" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" stroke="none"/></svg>
+              </a>
+              <a class="social-chip threads" href="https://www.threads.com/@tanmay__creat_2.0" target="_blank" rel="noopener noreferrer" aria-label="Threads">@</a>
+              <a class="social-chip facebook" href="https://www.facebook.com/profile.php?id=61580171691140&amp;rdid=3O5nMwzpzvv5J9Kd&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18VskqeB4A%2F#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+              <a class="social-chip linkedin" href="https://www.linkedin.com/in/tanmoy-sau-985319425/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <button class="pill-btn outline with-arrow" data-open-modal="1">
+            <span class="pill-inner">Contact Me <span class="pill-badge up-right"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CreateBand -->
+  <section class="create-band">
+    <ul class="shell create-list">
+      <li style="flex:1"><div class="create-tile light reveal" data-delay="0">Learn</div></li>
+      <li style="flex:1"><div class="create-tile accent reveal" data-delay="120">Create</div></li>
+      <li style="flex:1"><div class="create-tile dark reveal" data-delay="240"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:2.25rem;height:2.25rem"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></li>
+      <li style="flex:1"><div class="create-tile ghost reveal" data-delay="360">Grow</div></li>
+    </ul>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="works">
+    <div class="shell">
+      <div class="section-eyebrow-wrap"><div class="eyebrow dark bordered reveal">Education</div></div>
+      <h2 class="section-h2"><span class="line-wrap"><span class="line-inner" data-line>Educational Details</span></span></h2>
+      <ul class="cards-grid">
+        <li class="reveal" data-delay="0"><article class="p-card" style="cursor:default">
+          <div class="p-card-top"><span>B.Pharm — 4th Year</span><span class="p-card-badge">01</span></div>
+          <div class="p-card-bottom"><h3>Bachelor of Pharmacy</h3><p>Current status · 4th Year<br>Focus · Pharmacovigilance, clinical data, drug safety</p><div class="tag-row"><span class="tag-chip">B.Pharm</span><span class="tag-chip">4th Year</span></div></div>
+        </article></li>
+        <li class="reveal" data-delay="90"><article class="p-card" style="cursor:default">
+          <div class="p-card-top"><span>Madhyamik — 2021</span><span class="p-card-badge">02</span></div>
+          <div class="p-card-bottom"><h3>Deulia Hiraram High School</h3><p>Year of Pass · 2021<br>Marks · 585 · 83.57%</p><div class="tag-row"><span class="tag-chip">Madhyamik</span><span class="tag-chip">83.57%</span></div></div>
+        </article></li>
+        <li class="reveal" data-delay="180"><article class="p-card" style="cursor:default">
+          <div class="p-card-top"><span>Higher Secondary — 2023</span><span class="p-card-badge">03</span></div>
+          <div class="p-card-bottom"><h3>Deulia Hiraram High School</h3><p>Year of Pass · 2023<br>Marks · 400 · 80%</p><div class="tag-row"><span class="tag-chip">Higher Secondary</span><span class="tag-chip">80%</span></div></div>
+        </article></li>
+        <li class="reveal" data-delay="270"><article class="p-card" style="cursor:default">
+          <div class="p-card-top"><span>Diploma — 2025</span><span class="p-card-badge">04</span></div>
+          <div class="p-card-bottom"><h3>Diploma on Painting</h3><p>Suro Bharati Sangeet Kala Kendra · Nachiketa Art School<br>Paper 1 · 85 &nbsp; Paper 2 · 95</p><div class="tag-row"><span class="tag-chip">Painting</span><span class="tag-chip">2025</span></div></div>
+        </article></li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services / Skills -->
+  <section id="services">
+    <div class="shell">
+      <div class="eyebrow dark reveal">Skills</div>
+      <h2 class="services-h2"><span class="line-wrap"><span class="line-inner" data-line>Core Technical Skills &amp; Lab Skills</span></span></h2>
+      <ul>
+        <li class="service-row-li reveal" data-delay="0"><a href="#services"><div class="service-row"><span class="service-index">01</span><h3 class="service-title">Pharmaceutical Analysis</h3><p class="service-desc">UV · IR · HPLC · TLC</p><span class="service-badge">PA</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="60"><a href="#services"><div class="service-row"><span class="service-index">02</span><h3 class="service-title">Drug Formulation &amp; Dosage Form Design</h3><p class="service-desc">Formulation principles and dosage form design</p><span class="service-badge">DF</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="120"><a href="#services"><div class="service-row"><span class="service-index">03</span><h3 class="service-title">Molecular Docking</h3><p class="service-desc">Basic molecular docking and drug discovery workflows</p><span class="service-badge">MD</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="180"><a href="#services"><div class="service-row"><span class="service-index">04</span><h3 class="service-title">Drug Databases</h3><p class="service-desc">Drug information lookup and research support</p><span class="service-badge">DB</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="240"><a href="#services"><div class="service-row"><span class="service-index">05</span><h3 class="service-title">Pharmacovigilance &amp; Drug Safety</h3><p class="service-desc">Drug safety practices and pharmacovigilance fundamentals</p><span class="service-badge">PV</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="300"><a href="#services"><div class="service-row"><span class="service-index">06</span><h3 class="service-title">Clinical Data Management</h3><p class="service-desc">Clinical data handling and documentation</p><span class="service-badge">CD</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="360"><a href="#services"><div class="service-row"><span class="service-index">07</span><h3 class="service-title">Prescription Reading &amp; Medical Terminology</h3><p class="service-desc">Prescription interpretation and medical terminology</p><span class="service-badge">MT</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="420"><a href="#services"><div class="service-row"><span class="service-index">08</span><h3 class="service-title">Medical Coding</h3><p class="service-desc">Foundational medical coding knowledge</p><span class="service-badge">MC</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="480"><a href="#services"><div class="service-row"><span class="service-index">09</span><h3 class="service-title">Macroscopic &amp; Microscopic Evaluation</h3><p class="service-desc">Crude drug evaluation using macro and micro characteristics</p><span class="service-badge">ME</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="540"><a href="#services"><div class="service-row"><span class="service-index">10</span><h3 class="service-title">Powder Microscopy</h3><p class="service-desc">Microscopic examination of powdered crude drugs</p><span class="service-badge">PM</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="600"><a href="#services"><div class="service-row"><span class="service-index">11</span><h3 class="service-title">Extraction Techniques</h3><p class="service-desc">Practical extraction techniques for crude drugs</p><span class="service-badge">ET</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="660"><a href="#services"><div class="service-row"><span class="service-index">12</span><h3 class="service-title">Phytochemical Screening</h3><p class="service-desc">Screening and identification of phytochemical constituents</p><span class="service-badge">PS</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="720"><a href="#services"><div class="service-row"><span class="service-index">13</span><h3 class="service-title">Identification of Adulterants</h3><p class="service-desc">Identification of adulteration in crude drugs</p><span class="service-badge">IA</span></div></a></li>
+        <li class="service-row-li reveal" data-delay="780"><a href="#services"><div class="service-row"><span class="service-index">14</span><h3 class="service-title">Ash Values &amp; Extractive Values</h3><p class="service-desc">Evaluation of pharmacognostic quality parameters</p><span class="service-badge">AV</span></div></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="shell">
+      <div class="section-eyebrow-wrap"><div class="eyebrow dark bordered reveal">Certifications</div></div>
+      <h2 class="section-h2"><span class="line-wrap"><span class="line-inner" data-line>Professional Certificates</span></span></h2>
+      <ul class="cert-grid">
+        <li class="reveal" data-delay="0"><article class="cert-card">
+          <span class="cert-no">01</span>
+          <h3>Signal Detection and Management in Pharmacovigilance</h3>
+          <p>Certification focused on signal detection, evaluation, and management within pharmacovigilance.</p>
+          <div class="cert-meta"><span>Pharmacovigilance</span><span>Certified</span></div>
+        </article></li>
+        <li class="reveal" data-delay="90"><article class="cert-card">
+          <span class="cert-no">02</span>
+          <h3>AI in Drug Discovery</h3>
+          <p>Certification covering the application of artificial intelligence concepts in modern drug discovery.</p>
+          <div class="cert-meta"><span>Drug Discovery</span><span>Certified</span></div>
+        </article></li>
+        <li class="reveal" data-delay="180"><article class="cert-card">
+          <span class="cert-no">03</span>
+          <h3>Molecular Docking</h3>
+          <p>Certification supporting foundational knowledge of molecular docking and computational drug discovery.</p>
+          <div class="cert-meta"><span>Molecular Docking</span><span>Certified</span></div>
+        </article></li>
+        <li class="reveal" data-delay="270"><article class="cert-card">
+          <span class="cert-no">04</span>
+          <h3>Medical Writing Skills for Beginners</h3>
+          <p>Certificate issued to Tanmay Sau on 30 July 2026, valid through 30 July 2027.</p>
+          <div class="cert-meta"><span>Medical Writing</span><span>Issued 2026</span></div>
+        </article></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section id="stats-wrap">
+    <div class="shell">
+      <div class="stats-panel reveal">
+        <div class="eyebrow light">Profile snapshot</div>
+        <h2 class="stats-h2"><span class="line-wrap"><span class="line-inner" data-line>Academic, clinical &amp; creative highlights.</span></span></h2>
+        <ul class="stats-grid">
+          <li class="reveal" data-delay="0"><div class="stat-num" data-count="4" data-suffix="th">0</div><div class="stat-label">B.Pharm year</div></li>
+          <li class="reveal" data-delay="90"><div class="stat-num" data-count="4" data-suffix="">0</div><div class="stat-label">Certificates</div></li>
+          <li class="reveal" data-delay="180"><div class="stat-num" data-count="85" data-suffix="">0</div><div class="stat-label">Painting Paper 1</div></li>
+          <li class="reveal" data-delay="270"><div class="stat-num" data-count="95" data-suffix="">0</div><div class="stat-label">Painting Paper 2</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="shell footer-inner">
+    <div class="footer-cta">
+      <h2 class="footer-h2">
+        <span class="line-wrap"><span class="line-inner" data-line>Healthcare, research &amp;</span></span>
+        <span class="line-wrap"><span class="line-inner" data-line>creative work — let's talk.</span></span>
+      </h2>
+      <button class="pill-btn light with-arrow" data-open-modal="1">
+        <span class="pill-inner">Say hello <span class="pill-badge up-right"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span>
+      </button>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-brand-row"><svg class="icon" viewBox="0 0 48 48" fill="currentColor"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg> Tanmay Sau</div>
+        <p class="footer-tagline">B.Pharm 4th-year student, aspiring healthcare professional, and artist with training in pharmacovigilance, clinical data, drug safety, and painting.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <div class="footer-links">
+          <a class="animated-link" href="#home" data-scroll="home"><span>Home</span></a>
+          <a class="animated-link" href="#works" data-scroll="works"><span>Education</span></a>
+          <a class="animated-link" href="#services" data-scroll="services"><span>Skills</span></a>
+          <a class="animated-link" href="#certifications" data-scroll="certifications"><span>Certificates</span></a>
+          <button class="animated-link" data-open-modal="1"><span>Contact</span></button>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-links">
+          <a class="animated-link" href="mailto:sautanmoy425@gmail.com"><span>Email</span></a>
+          <a class="animated-link" href="tel:6291670360"><span>Phone</span></a>
+          <a class="animated-link" href="https://www.instagram.com/tanmaysau_arts?utm_source=qr&amp;stkn=eThkdmdsemk5ZzQ3" target="_blank" rel="noopener noreferrer"><span>Instagram</span></a>
+          <a class="animated-link" href="https://www.threads.com/@tanmay__creat_2.0" target="_blank" rel="noopener noreferrer"><span>Threads</span></a>
+          <a class="animated-link" href="https://www.facebook.com/profile.php?id=61580171691140&amp;rdid=3O5nMwzpzvv5J9Kd&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18VskqeB4A%2F#" target="_blank" rel="noopener noreferrer"><span>Facebook</span></a>
+          <a class="animated-link" href="https://www.linkedin.com/in/tanmoy-sau-985319425/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Based in</div>
+        <div class="footer-links">
+          <span style="font-size:.875rem; color:rgba(255,255,255,.65)">Tahala, Post-Sagarbarh, Purba Medinipur - 721151</span>
+          <span style="font-size:.875rem; color:rgba(255,255,255,.65)">B.Pharm · 4th Year · Fresher</span>
+        </div>
+      </div>
+    </div>
+    <div class="legal-bar">
+      <span>© 2026 Tanmay Sau. All rights reserved.</span>
+      <div class="right">
+        <a class="animated-link" href="mailto:sautanmoy425@gmail.com"><span>Email</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-watermark">TANMAY</div>
+</footer>
+
+<!-- NavMenu -->
+<div id="nav-menu">
+  <div class="shell nav-topbar">
+    <div class="brand-row"><svg class="icon" viewBox="0 0 48 48" fill="currentColor"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg> Tanmay Sau</div>
+    <button class="close-btn" id="close-nav-btn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg> Close</button>
+  </div>
+  <div class="shell nav-menu-items">
+    <ul>
+      <li><button data-scroll="home"><span class="idx">01</span><span class="label">Home</span></button></li>
+      <li><button data-scroll="works"><span class="idx">02</span><span class="label">Education</span></button></li>
+      <li><button data-scroll="services"><span class="idx">03</span><span class="label">Profile</span></button></li>
+      <li><button data-scroll="certifications"><span class="idx">04</span><span class="label">Certificates</span></button></li>
+      <li><button data-scroll="about"><span class="idx">05</span><span class="label">About</span></button></li>
+      <li><button data-open-modal="1"><span class="idx">06</span><span class="label">Contact</span></button></li>
+    </ul>
+  </div>
+  <div class="shell nav-bottombar">
+    <span id="nav-local-time">Local time</span>
+    <button data-open-modal="1">Say hello →</button>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="modal-backdrop">
+  <div class="modal-panel" role="dialog" aria-modal="true" id="modal-panel">
+    <button class="modal-close" id="modal-close-btn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+
+    <div id="modal-form-state">
+      <div class="modal-heading">
+        <div class="tag"><span class="dot"></span> Get in touch</div>
+        <h2>Send a message to Tanmay.</h2>
+      </div>
+      <form id="contact-form">
+        <label><span class="cap">Name</span><input type="text" name="name" required placeholder="Your name" /></label>
+        <label><span class="cap">Email</span><input type="email" name="email" required placeholder="you@company.com" /></label>
+        <label><span class="cap">Subject</span><input type="text" name="subject" required placeholder="Subject" /></label>
+         <label><span class="cap">Message</span><textarea name="message" rows="4" required placeholder="Write your message here."></textarea></label>
+        <div class="modal-bottom-row">
+          <span class="note">You can also call 6291670360.</span>
+          <button class="pill-btn dark with-arrow" type="submit" id="submit-btn">
+            <span class="pill-inner"><span id="submit-label">Send message</span> <span class="pill-badge up-right"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="modal-success-state" class="success-state" style="display:none">
+      <div class="success-badge"><svg class="icon" viewBox="0 0 48 48" fill="currentColor"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg></div>
+      <h2>Message received</h2>
+      <p>Thanks for reaching out. You can also contact Tanmay directly at sautanmoy425@gmail.com or 6291670360.</p>
+      <button class="pill-btn dark no-arrow" id="modal-success-close"><span class="pill-inner">Close</span></button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+window.scrollTo(0, 0);
+
+/* Lenis is a nice-to-have smooth-scroll layer. Load it defensively —
+   if the CDN is unreachable (offline preview, blocked network, etc.)
+   the whole page must still work with native scrolling. */
+let lenis = null;
+try {
+  const mod = await import('https://unpkg.com/lenis@1.3.23/dist/lenis.mjs');
+  const Lenis = mod.default;
+  lenis = new Lenis({ smoothWheel: true });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+} catch (err) {
+  console.warn('Lenis unavailable, falling back to native scroll.', err);
+}
+
+let scrollEnabled = true;
+function stopScroll(){
+  if(lenis) lenis.stop();
+  document.documentElement.style.position='relative'; document.documentElement.style.overflow='hidden'; document.documentElement.style.height='100%'; scrollEnabled=false;
+}
+function startScroll(){
+  if(lenis) lenis.start();
+  document.documentElement.style.removeProperty('position'); document.documentElement.style.removeProperty('overflow'); document.documentElement.style.removeProperty('height'); scrollEnabled=true;
+}
+
+function scrollToId(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  setTimeout(()=>{
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior:'smooth' });
+  }, 50);
+}
+document.querySelectorAll('[data-scroll]').forEach(btn=>{
+  btn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const id = btn.getAttribute('data-scroll');
+    closeNav();
+    scrollToId(id);
+  });
+});
+
+/* Adaptive grid scale-up above 1920px */
+function applyAdaptiveGrid(){
+  const FONT_BASE = 16, baseWidth = 1920, coef = 0.6666;
+  const w = window.innerWidth;
+  const widthReduction = ((baseWidth - w) / baseWidth) * 100;
+  const size = FONT_BASE - (FONT_BASE * (widthReduction * coef)) / 100;
+  if (size > FONT_BASE) document.documentElement.style.fontSize = size + 'px';
+  else document.documentElement.style.removeProperty('font-size');
+}
+applyAdaptiveGrid(); addEventListener('resize', applyAdaptiveGrid);
+
+/* ---------- Loader ---------- */
+stopScroll();
+
+/* Hard failsafe: no matter what else goes wrong below, never leave the
+   visitor stuck behind the loader for more than a couple seconds. */
+setTimeout(()=>{
+  const l = document.getElementById('loader');
+  if(l){ l.remove(); startScroll(); }
+  document.getElementById('site-header')?.classList.add('in');
+  document.getElementById('watermark')?.classList.add('in');
+  document.querySelectorAll('#home .reveal, #home .line-inner').forEach(el=>el.classList.add('in'));
+}, 2500);
+
+const FILL_MS = 1300;
+const fillEl = document.getElementById('loader-fill');
+const countEl = document.getElementById('loader-count');
+const loaderEl = document.getElementById('loader');
+let readyFlag = false;
+function easeInOutCubic(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+const startT = performance.now();
+function loaderTick(now){
+  const t = Math.min((now-startT)/FILL_MS, 1);
+  const progress = Math.round(easeInOutCubic(t)*100);
+  fillEl.style.width = progress + '%';
+  countEl.textContent = String(progress).padStart(3,'0');
+  if(t<1){ requestAnimationFrame(loaderTick); }
+  else{
+    loaderEl.classList.add('exit');
+    setTimeout(()=>{
+      loaderEl.remove();
+      readyFlag = true;
+      startScroll();
+      runEntranceReveals();
+    }, 720);
+  }
+}
+requestAnimationFrame(loaderTick);
+
+/* ---------- Entrance reveals gated on ready ---------- */
+function runEntranceReveals(){
+  document.getElementById('site-header').classList.add('in');
+  document.getElementById('watermark').classList.add('in');
+  document.querySelectorAll('#home .reveal, #home .line-inner').forEach(el=>{
+    const delay = parseInt(el.getAttribute('data-delay')||'0',10);
+    setTimeout(()=>{ el.classList.add('in'); }, delay);
+  });
+}
+
+/* ---------- Scroll-triggered reveals for rest of page ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el = entry.target;
+      const delay = parseInt(el.getAttribute('data-delay')||'0',10);
+      setTimeout(()=>{
+        el.classList.add('in');
+        el.querySelectorAll('.line-inner').forEach((line,i)=>{
+          setTimeout(()=>line.classList.add('in'), i*120);
+        });
+      }, delay);
+      io.unobserve(el);
+    }
+  });
+}, { threshold:0.2 });
+document.querySelectorAll('.reveal').forEach(el=>{ if(!el.closest('#home')) io.observe(el); });
+
+/* word reveal for About */
+const wordIo = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const spans = entry.target.querySelectorAll('.word');
+      spans.forEach((w,i)=> setTimeout(()=>w.classList.add('in'), i*35));
+      wordIo.unobserve(entry.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('[data-words]').forEach(el=>{
+  const text = el.textContent;
+  el.innerHTML = text.split(' ').map(w=>`<span class="word">${w}</span>`).join(' ');
+  wordIo.observe(el);
+});
+
+/* ---------- Clock ---------- */
+function updateClock(){
+  const now = new Date();
+  let h = now.getHours(); const m = String(now.getMinutes()).padStart(2,'0');
+  const mer = h>=12 ? 'pm':'am'; h = h%12 || 12;
+  const timeStr = `${h}:${m}${mer}`;
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dateStr = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`;
+  const timeEl = document.getElementById('clock-time'); if(timeEl) timeEl.textContent = timeStr;
+  const dateEl = document.getElementById('clock-date'); if(dateEl) dateEl.textContent = dateStr;
+  const navTime = document.getElementById('nav-local-time'); if(navTime) navTime.textContent = 'Local time — ' + timeStr;
+}
+updateClock(); setInterval(updateClock, 1000);
+
+/* ---------- Hero carousel ---------- */
+const carouselItems = [
+  { caption:'Education', title:'B.Pharm · 4th Year.' },
+  { caption:'Clinical Focus', title:'Pharmacovigilance & Drug Safety.' },
+  { caption:'Creative Work', title:'Diploma in Painting · 2025.' }
+];
+let carouselIndex = 0;
+function renderCarousel(){
+  const cap = document.getElementById('carousel-caption');
+  const title = document.getElementById('carousel-title');
+  cap.style.opacity = 0; title.style.opacity = 0;
+  setTimeout(()=>{
+    cap.textContent = carouselItems[carouselIndex].caption;
+    title.textContent = carouselItems[carouselIndex].title;
+    cap.style.opacity = 1; title.style.opacity = 1;
+  }, 150);
+  document.querySelectorAll('#carousel-dots span').forEach((d,i)=> d.classList.toggle('active', i===carouselIndex));
+}
+document.getElementById('carousel-next').addEventListener('click', ()=>{ carouselIndex=(carouselIndex+1)%carouselItems.length; renderCarousel(); });
+document.getElementById('carousel-prev').addEventListener('click', ()=>{ carouselIndex=(carouselIndex-1+carouselItems.length)%carouselItems.length; renderCarousel(); });
+document.getElementById('hero-carousel').addEventListener('click', (e)=>{ if(e.target.closest('.carousel-nav')) return; carouselIndex=(carouselIndex+1)%carouselItems.length; renderCarousel(); });
+
+/* ---------- Nav overlay ---------- */
+const navMenu = document.getElementById('nav-menu');
+function openNav(){ navMenu.classList.add('open'); stopScroll(); document.addEventListener('keydown', escNav); }
+function closeNav(){ navMenu.classList.remove('open'); if(!document.getElementById('modal-backdrop').classList.contains('open')) startScroll(); document.removeEventListener('keydown', escNav); }
+function escNav(e){ if(e.key==='Escape') closeNav(); }
+document.getElementById('open-nav-btn').addEventListener('click', openNav);
+document.getElementById('close-nav-btn').addEventListener('click', closeNav);
+
+/* ---------- Contact modal ---------- */
+const modalBackdrop = document.getElementById('modal-backdrop');
+function openModal(){ modalBackdrop.classList.add('open'); closeNav(); stopScroll(); document.addEventListener('keydown', escModal); }
+function closeModal(){ modalBackdrop.classList.remove('open'); startScroll(); document.removeEventListener('keydown', escModal);
+  setTimeout(()=>{
+    document.getElementById('modal-form-state').style.display='block';
+    document.getElementById('modal-success-state').style.display='none';
+    document.getElementById('contact-form').reset();
+  }, 300);
+}
+function escModal(e){ if(e.key==='Escape') closeModal(); }
+document.querySelectorAll('[data-open-modal]').forEach(btn=> btn.addEventListener('click', openModal));
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', (e)=>{ if(e.target===modalBackdrop) closeModal(); });
+document.getElementById('modal-panel').addEventListener('click', e=> e.stopPropagation());
+document.getElementById('modal-success-close').addEventListener('click', closeModal);
+
+document.getElementById('contact-form').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const form = e.target;
+  const label = document.getElementById('submit-label');
+  const originalLabel = label.textContent;
+  label.textContent = 'Sending…';
+
+  const data = new FormData(form);
+  data.append('_subject', "New message from Tanmay Sau's website");
+
+  fetch('https://formsubmit.co/ajax/sautanmoy425@gmail.com', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: data
+  })
+  .then(res => {
+    if(!res.ok) throw new Error('Request failed');
+    return res.json();
+  })
+  .then(() => {
+    document.getElementById('modal-form-state').style.display='none';
+    document.getElementById('modal-success-state').style.display='flex';
+    label.textContent = originalLabel;
+  })
+  .catch(() => {
+    label.textContent = originalLabel;
+    alert('Something went wrong sending that — please email sautanmoy425@gmail.com directly instead.');
+  });
+});
+
+/* ---------- Stats count-up ---------- */
+const statEls = document.querySelectorAll('.stat-num');
+function statProgress(el){
+  const rect = el.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const start = vh; // top hits viewport bottom
+  const end = vh/2; // center hits viewport center
+  const elCenter = rect.top + rect.height/2;
+  let p = (start - rect.top) / (start - end);
+  p = Math.max(0, Math.min(1, p));
+  return p;
+}
+let lastStatUpdate = 0;
+function statLoop(ts){
+  if(ts - lastStatUpdate > 30){
+    statEls.forEach(el=>{
+      const target = parseFloat(el.getAttribute('data-count'));
+      const suffix = el.getAttribute('data-suffix')||'';
+      const p = statProgress(el);
+      const current = p*target;
+      const display = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
+      el.textContent = display + (p>0 ? suffix : '');
+    });
+    lastStatUpdate = ts;
+  }
+  requestAnimationFrame(statLoop);
+}
+requestAnimationFrame(statLoop);
+
+/* ---------- Liquid hero reveal (procedural base/reveal textures) ---------- */
+function buildBaseTexture(){
+  const c = document.createElement('canvas'); c.width=960; c.height=640;
+  const ctx = c.getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,960,640);
+  grad.addColorStop(0,'#dddcda'); grad.addColorStop(1,'#c9c9c9');
+  ctx.fillStyle = grad; ctx.fillRect(0,0,960,640);
+  ctx.strokeStyle = 'rgba(17,17,17,0.06)'; ctx.lineWidth=1;
+  for(let x=0;x<=960;x+=32){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,640); ctx.stroke(); }
+  for(let y=0;y<=640;y+=32){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(960,y); ctx.stroke(); }
+  ctx.fillStyle='rgba(17,17,17,0.05)';
+  for(let i=0;i<40;i++){ ctx.fillRect(Math.random()*960, Math.random()*640, Math.random()*3+1, Math.random()*3+1); }
+  return c.toDataURL();
+}
+function buildAfterCanvas(){
+  const c = document.createElement('canvas'); c.width=960; c.height=640;
+  const ctx = c.getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,960,640);
+  grad.addColorStop(0,'#1a1a1a'); grad.addColorStop(1,'#0a0a0a');
+  ctx.fillStyle = grad; ctx.fillRect(0,0,960,640);
+  ctx.font = '14px monospace';
+  const lines = ['TANMAY SAU','B.PHARM: 4TH YEAR','PHARMACOVIGILANCE','CLINICAL DATA','DRUG SAFETY','MOLECULAR DOCKING','DIPLOMA: PAINTING','ARTIST: FRESHER'];
+  ctx.fillStyle = 'rgba(207,128,71,0.9)';
+  for(let i=0;i<28;i++){
+    const line = lines[i % lines.length];
+    ctx.fillText(line, 20 + (i%3)*20, 30 + i*22);
+  }
+  return { canvas:c, dataUrl:c.toDataURL() };
+}
+
+const baseImg = document.getElementById('hero-base-img');
+baseImg.src = buildBaseTexture();
+const afterBuilt = buildAfterCanvas();
+
+const liquidWrap = document.getElementById('liquid-wrap');
+const canvas = document.getElementById('liquid-canvas');
+const ctx2 = canvas.getContext('2d');
+const brushRadius = 143, decay = 0.016;
+const dpr = Math.min(window.devicePixelRatio||1, 2);
+let idle = 0;
+let points = [];
+let last = null;
+let coverCanvas = null;
+const brushCanvas = document.createElement('canvas');
+
+function sizeCanvas(){
+  const rect = liquidWrap.getBoundingClientRect();
+  canvas.width = Math.max(1, Math.round(rect.width*dpr));
+  canvas.height = Math.max(1, Math.round(rect.height*dpr));
+  canvas.style.width = rect.width+'px'; canvas.style.height = rect.height+'px';
+  const cc = document.createElement('canvas'); cc.width = canvas.width; cc.height = canvas.height;
+  const cctx = cc.getContext('2d');
+  const img = afterBuilt.canvas;
+  const scale = Math.max(cc.width/img.width, cc.height/img.height);
+  const dw = img.width*scale, dh = img.height*scale;
+  cctx.drawImage(img, (cc.width-dw)/2, (cc.height-dh)/2, dw, dh);
+  coverCanvas = cc;
+  const radius = brushRadius*dpr; const diam = Math.ceil(radius*2);
+  brushCanvas.width = diam; brushCanvas.height = diam;
+}
+sizeCanvas();
+new ResizeObserver(sizeCanvas).observe(liquidWrap);
+
+function stamp(x,y){
+  const radius = brushRadius*dpr; const diam = Math.ceil(radius*2); const c = radius;
+  const bctx = brushCanvas.getContext('2d');
+  bctx.clearRect(0,0,diam,diam);
+  bctx.globalCompositeOperation='source-over';
+  const grad = bctx.createRadialGradient(c,c,0,c,c,radius);
+  grad.addColorStop(0,'rgba(255,255,255,1)'); grad.addColorStop(0.55,'rgba(255,255,255,.82)'); grad.addColorStop(1,'rgba(255,255,255,0)');
+  bctx.fillStyle = grad; bctx.fillRect(0,0,diam,diam);
+  bctx.globalCompositeOperation='source-in';
+  bctx.drawImage(coverCanvas, x-c, y-c, diam, diam, 0,0,diam,diam);
+  ctx2.globalCompositeOperation='source-over';
+  ctx2.drawImage(brushCanvas, x-c, y-c);
+}
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion){
+  window.addEventListener('pointermove', (e)=>{
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX - rect.left)*dpr, y = (e.clientY - rect.top)*dpr;
+    const radius = brushRadius*dpr;
+    if(x < -radius || y < -radius || x > canvas.width+radius || y > canvas.height+radius){ last=null; return; }
+    if(last){
+      const dx=x-last.x, dy=y-last.y; const dist=Math.hypot(dx,dy);
+      const step = Math.max(radius*0.3,1);
+      const n = Math.min(Math.ceil(dist/step),60);
+      for(let i=1;i<=n;i++){ points.push({ x: last.x+dx*(i/n), y: last.y+dy*(i/n) }); }
+    } else { points.push({x,y}); }
+    last = {x,y};
+  });
+  function liquidTick(){
+    if(coverCanvas){
+      if(points.length){ idle=0; } else { idle++; }
+      if(idle<=120){
+        const fade = points.length ? decay : Math.min(decay + idle*0.004, 0.5);
+        ctx2.globalCompositeOperation='destination-out';
+        ctx2.fillStyle = `rgba(0,0,0,${fade})`;
+        ctx2.fillRect(0,0,canvas.width,canvas.height);
+        if(points.length){ points.forEach(p=>stamp(p.x,p.y)); points=[]; }
+        if(idle===120){ ctx2.clearRect(0,0,canvas.width,canvas.height); }
+      }
+    }
+    requestAnimationFrame(liquidTick);
+  }
+  requestAnimationFrame(liquidTick);
+}
+</script>
+</body>
+</html>
